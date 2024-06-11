@@ -71,12 +71,17 @@ function clickCounter() {
   })
 }
 
-// Opgave 5 - Tæller antallet af bogstaver (og mellemrum) ord/sætning.
+// Opgave 5 - Tæller antallet af bogstaver (og mellemrum) i ord/sætning.
 function wordLenght(word) {
+  let trimWord = word.trim().replace(/\s/g, '');
   let insertedWord = document.createElement('p');
   let wordLenght = document.createElement('p');
-  insertedWord.innerText = `Word: ${word}`;
-  wordLenght.innerText = `Length: ${word.length}`;
+  insertedWord.innerText = `
+  Word/String:
+  ${word}`;
+  wordLenght.innerText = `
+  Length without whitespace: ${trimWord.length}
+  Length with whitespace: ${word.length}`;
   L1_5.appendChild(insertedWord);
   L1_5.appendChild(wordLenght);
 }
@@ -89,11 +94,10 @@ function removeLetters(word) {
   L1_6.appendChild(paragraph);
 }
 
-
 // Function Calls
 fullName("Dr.", "Strange");
 isVisible();
 colorButton();
 clickCounter();
-wordLenght('ChatGPT');
+wordLenght('Din mor er vild i varmen');
 removeLetters('Rød grød med fløde. Fem flade flødeboller på et fladt flødebollefad. Gå lige op og sig de skal skrue ned. Æbler er sunde, har jeg hørt en sige engang.');
