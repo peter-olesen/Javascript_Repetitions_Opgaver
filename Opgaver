@@ -12,3 +12,17 @@
 
 6. Lav en funktion der kan fjerne alle vokaler i en string. Din funktion skal kunne tage imod
    et ord som argument og "rense" det for alle vokaler inden det vises i DOM´en.
+
+
+## Lektion 2 Øvelsesopgaver
+
+1. Lav en funktion der kan tjekke om en værdi (argumentet) er en string eller et tal og vise det i DOM´en.
+   Det skal gerne ende ud i at der eks. står: 123 er af typen: number, i DOM´en.
+
+2. Lav en funktion der kan tjekke om en email er korrekt (indeholder @ og slutter på .com/.dk/osv.)
+
+3. Lav en funktion der kan tjekke om længden på en string er længere end eller lig med 2 bogstaver
+
+4. Lav en funktion der kan give os et tilfældigt tal, mellem to input argumenter, eks. mellem 4 og 32. Tilføj en button til HTML´en og lav en onclick der kalder din funktion. Til slut skal følgende besked vises for brugeren: Vores tilfældige tal mellem _startværdi_ og _slutværdi_ er: _randomværdi_ `;
+
+5. Lav en funktion der returnerer en tilfældig RGB farve værdi og tildel denne til et element du opretter, når brugeren klikker på en knap.
