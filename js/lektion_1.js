@@ -22,7 +22,11 @@ function isVisible() {
 
   hideBtn.addEventListener('click', () => {
     paragraph.classList.toggle('hidden');
-    hideBtn.innerText = 'Click to show paragraph';
+    if (hideBtn.innerText === 'Click to hide paragraph') {
+      hideBtn.innerText = 'Click to show paragraph';
+    } else {
+      hideBtn.innerText = 'Click to hide paragraph';
+    }
   })
 
   L1_2.appendChild(hideBtn);
@@ -92,4 +96,4 @@ isVisible();
 colorButton();
 clickCounter();
 wordLenght('ChatGPT');
-removeLetters('Rød grød med fløde. Fed flade flødeboller på et fladt flødebollefad. Gå lige op og sig de skal skrue ned. Æbler er sunde, har jeg hørt en sige engang.');
+removeLetters('Rød grød med fløde. Fem flade flødeboller på et fladt flødebollefad. Gå lige op og sig de skal skrue ned. Æbler er sunde, har jeg hørt en sige engang.');
