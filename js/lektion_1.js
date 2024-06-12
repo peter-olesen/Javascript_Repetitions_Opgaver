@@ -8,8 +8,10 @@ let L1_6 = document.querySelector("#L1_6");
 // Opgave 1 - Inputter navn i velkomst.
 function fullName(firstName, lastName) {
   let greeting = "Welcome " + firstName + " " + lastName;
+
   let newH3 = document.createElement("h3");
   newH3.innerText = greeting;
+
   L1_1.appendChild(newH3);
 }
 
@@ -17,6 +19,7 @@ function fullName(firstName, lastName) {
 function isVisible() {
   let hideBtn = document.createElement('button');
   hideBtn.innerText = 'Click to hide paragraph';
+
   let paragraph = document.createElement('p');
   paragraph.innerText = 'Hey, you suck!';
 
@@ -27,7 +30,7 @@ function isVisible() {
     } else {
       hideBtn.innerText = 'Click to hide paragraph';
     }
-  })
+  });
 
   L1_2.appendChild(hideBtn);
   L1_2.appendChild(paragraph);
@@ -37,9 +40,8 @@ function isVisible() {
 function colorButton() {
   let changeColorBtn = document.createElement('button');
   changeColorBtn.innerText = 'Change Color';
-  L1_3.appendChild(changeColorBtn);
+  
   let colorWarning = document.createElement('p');
-  L1_3.appendChild(colorWarning);
 
   let isColored = false;
 
@@ -53,35 +55,44 @@ function colorButton() {
     }
     isColored = !isColored;
   });
+
+  L1_3.appendChild(changeColorBtn);
+  L1_3.appendChild(colorWarning);
 }
 
 // Opgave 4 - Tæller hvor mange gange knappen er clicked.
-function clickCounter() {
+  function clickCounter() {
   let counterBtn = document.createElement('button');
   counterBtn.innerText = "Don't Click Me";
-  L1_4.appendChild(counterBtn);
+
   let clickCount = document.createElement('p');
-  L1_4.appendChild(clickCount);
 
   let count = 0;
 
   counterBtn.addEventListener('click', () => {
     count++;
     clickCount.innerText = `Some redneck clicked the button ${count} times`;
-  })
+  });
+
+  L1_4.appendChild(counterBtn);
+  L1_4.appendChild(clickCount);
 }
 
 // Opgave 5 - Tæller antallet af bogstaver (og mellemrum) i ord/sætning.
 function wordLenght(word) {
   let trimWord = word.trim().replace(/\s/g, '');
+
   let insertedWord = document.createElement('p');
+
   let wordLenght = document.createElement('p');
   insertedWord.innerText = `
   Word/String:
   ${word}`;
+
   wordLenght.innerText = `
   Length without whitespace: ${trimWord.length}
   Length with whitespace: ${word.length}`;
+
   L1_5.appendChild(insertedWord);
   L1_5.appendChild(wordLenght);
 }
@@ -91,6 +102,7 @@ function removeLetters(word) {
   let lettersRemoved = word.replace(/[aeiouyæøå]/gi, '');
   let paragraph = document.createElement('p');
   paragraph.innerText = `Cleaned word: ${lettersRemoved}`;
+
   L1_6.appendChild(paragraph);
 }
 
