@@ -9,7 +9,7 @@ function checkInputValue() {
     let inputElm = document.createElement('input');
     inputElm.type = 'text';
     inputElm.placeholder = 'Input something';
-    
+
     let msgElm = document.createElement('p');
 
     inputElm.addEventListener('input', () => {
@@ -91,14 +91,12 @@ function randomNumber() {
     let inputValue1 = document.createElement('input');
     inputValue1.setAttribute('type', 'number');
     inputValue1.setAttribute('id', 'value1');
-
-    let breaker1 = document.createElement('br');
+    inputValue1.style = 'display: block'
 
     let inputValue2 = document.createElement('input');
     inputValue2.setAttribute('type', 'number');
     inputValue2.setAttribute('id', 'value2');
-
-    let breaker2 = document.createElement('br');
+    inputValue2.style = 'display: block'
 
     let generateButton = document.createElement('button');
     generateButton.innerText = 'Get random number';
@@ -109,9 +107,7 @@ function randomNumber() {
 
     L2_4.appendChild(msg);
     L2_4.appendChild(inputValue1);
-    L2_4.appendChild(breaker1);
     L2_4.appendChild(inputValue2);
-    L2_4.appendChild(breaker2);
     L2_4.appendChild(generateButton);
     L2_4.appendChild(resultMsg);
 
