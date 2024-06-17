@@ -75,8 +75,6 @@ function studentDB() {
             newStudentInput.value = '';
         }
     });
-
-    console.log(newStudentInput.value);
 }
 
 studentDB()
