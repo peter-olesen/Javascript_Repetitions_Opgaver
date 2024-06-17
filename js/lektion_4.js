@@ -73,8 +73,26 @@ const delayedFunction = () => {
     delay(4, myFunction);
 }
 
+// Opgave 3 - Stopursfuntion
+const stopWatchFunction = () => {
+    let seconds = 0;
 
+    let timeElement = document.createElement('p')
+    timeElement.innerText = seconds;
+
+    const startStopWatch = () => {
+        let i = setInterval(() => {
+            seconds++;
+            timeElement.innerText = seconds + ' seconds passed';
+        }, 1000);
+    }
+
+    startStopWatch();
+
+    L4_3.appendChild(timeElement)
+}
 
 // Calls
 showFullName();
 delayedFunction();
+stopWatchFunction();
