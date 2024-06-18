@@ -50,10 +50,8 @@ const showFullName = () => {
 
     firstNameInput.addEventListener('change', updateFullName);
     lastNameInput.addEventListener('change', updateFullName);
-        
-    L4_1.appendChild(firstNameInput);
-    L4_1.appendChild(lastNameInput);
-    L4_1.appendChild(fullNameElm);
+    
+    L4_1.append(firstNameInput, lastNameInput, fullNameElm);
 }
 
 // Opgave 2 - Function køres efter 4 sekunders delay.
@@ -75,24 +73,60 @@ const delayedFunction = () => {
 
 // Opgave 3 - Stopursfuntion
 const stopWatchFunction = () => {
-    let seconds = 0;
+    let seconds = 0; // Starting number for stop watch.
+    let i; // Id of interval
 
-    let timeElement = document.createElement('p')
+    let startBtn = document.createElement('button');
+    startBtn.innerText = 'Start';
+    let stopBtn = document.createElement('button');
+    stopBtn.innerText = 'Stop';
+    let resetBtn = document.createElement('button');
+    resetBtn.innerText = 'Reset';
+    
+    let timeElement = document.createElement('h2');
     timeElement.innerText = seconds;
 
-    const startStopWatch = () => {
-        let i = setInterval(() => {
+    startBtn.addEventListener('click', () => {
+        i = setInterval(() => {
             seconds++;
-            timeElement.innerText = seconds + ' seconds passed';
-        }, 1000);
-    }
+            timeElement.innerText = seconds + ' seconds has passed';
+        }, 1000); // 1000 = milliseconds
+    });
 
-    startStopWatch();
+    stopBtn.addEventListener('click', () => {
+        clearInterval(i);
+        i = null;
+    });
 
-    L4_3.appendChild(timeElement)
+    resetBtn.addEventListener('click', () => {
+        clearInterval(i)
+        seconds = 0; // Sets starting number back to 0
+        timeElement.innerText = 'Timer was reset';
+        i = null;
+    });
+
+    L4_3.append(timeElement, startBtn, stopBtn, resetBtn);
+}
+
+// Opgave 4
+const scrollPercentageElm = () => {
+    let scrollMsg = document.createElement('p');
+    scrollMsg.innerHTML = `You have scrolled %`;
+    L4_4.appendChild(scrollMsg);
+
+    window.addEventListener('scroll', () => {
+        let winTop = window.scrollY;
+        let docHeight = document.body.offsetHeight;
+        let winHeight = window.innerHeight;
+
+        let scrollPercentage = winTop / (docHeight - winHeight);
+        let roundedPercentage = Math.round(scrollPercentage * 100);
+        scrollMsg.innerHTML = `You have scrolled ${roundedPercentage}%`;
+    });
 }
 
 // Calls
 showFullName();
-delayedFunction();
+// delayedFunction();
 stopWatchFunction();
+scrollPercentageElm();

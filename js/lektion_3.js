@@ -22,20 +22,15 @@ function createElement() {
             warning.style.display = 'block';
         } else {
             warning.style.display = 'none';
-            let inputtedElm = document.createElement(`${newElm}`)
-            L3_1.appendChild(inputtedElm);
+            let inputtedElm = document.createElement(`${newElm}`);
+            L3_1.append(inputtedElm);
         }
     });
 
-    L3_1.appendChild(inputElm);
-    L3_1.appendChild(btn);
-    L3_1.appendChild(warningMsg);
+    L3_1.append(inputElm, btn, warningMsg);
 }
 
-createElement()
-
 // Lektion 3 - Opgave 1
-
 function studentDB() {
     const classroom = {
         classNumber: 'A1',
@@ -56,16 +51,13 @@ function studentDB() {
     let studentsElm = document.createElement('p');
     studentsElm.innerText = 'Students: ' + classroom.students.join(', ');
 
-    L3_2.appendChild(classRoomElm);
-    L3_2.appendChild(roomElm);
-    L3_2.appendChild(studentsElm);
+    L3_2.append(classRoomElm, roomElm, studentsElm);
 
     let newStudentInput = document.createElement('input');
     let newStudentBtn = document.createElement('button');
     newStudentBtn.innerText = 'Add Student';
 
-    L3_2.appendChild(newStudentInput);
-    L3_2.appendChild(newStudentBtn);
+    L3_2.append(newStudentInput, newStudentBtn);
 
     newStudentBtn.addEventListener('click', () => {
         let newStudentName = newStudentInput.value.trim();
@@ -77,4 +69,6 @@ function studentDB() {
     });
 }
 
-studentDB()
+// Calls
+createElement();
+studentDB();

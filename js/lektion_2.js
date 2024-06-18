@@ -20,8 +20,7 @@ function checkInputValue() {
         msgElm.textContent = msg;
     });
 
-    L2_1.appendChild(inputElm);
-    L2_1.appendChild(msgElm);
+    L2_1.append(inputElm, msgElm);
 }
 
 // Opgave 2 - Tjekker om email er valid.
@@ -50,11 +49,10 @@ function checkEmail() {
                 return true;
             }
         }
-
         return false;
     }
 
-    L2_2.appendChild(emailInput);
+    L2_2.append(emailInput);
 }
 
 // Opgave 3 - Tjekker om en string er over/under to bogstaver.
@@ -79,8 +77,7 @@ function stringLength() {
         }
     });
 
-    L2_3.appendChild(inputElm);
-    L2_3.appendChild(msgElm);
+    L2_3.append(inputElm, msgElm);
 }
 
 // Opgave 4 - Generere et nummer mellem to inputs.
@@ -105,11 +102,7 @@ function randomNumber() {
     let resultMsg = document.createElement('p');
     resultMsg.setAttribute('id', 'resultMsg');
 
-    L2_4.appendChild(msg);
-    L2_4.appendChild(inputValue1);
-    L2_4.appendChild(inputValue2);
-    L2_4.appendChild(generateButton);
-    L2_4.appendChild(resultMsg);
+    L2_4.append(msg, inputValue1, inputValue2, generateButton, resultMsg);
 
     function generateRandomNumber() {
         let value1 = parseInt(document.getElementById('value1').value);
@@ -151,9 +144,8 @@ function rgbRandomizer() {
             let randomColor = getRandomRGB();
             colorParagraph.style.backgroundColor = randomColor;
         });
-        
-        L2_5.appendChild(rgbButton);
-        L2_5.appendChild(colorParagraph);
+
+        L2_5.append(rgbButton, colorParagraph);
     }
 
     createColorChangingElement();

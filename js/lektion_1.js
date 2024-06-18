@@ -12,7 +12,7 @@ function fullName(firstName, lastName) {
   let newH3 = document.createElement("h3");
   newH3.innerText = greeting;
 
-  L1_1.appendChild(newH3);
+  L1_1.append(newH3);
 }
 
 // Opgave 2 - Fjerner/viser paragraph ved button click.
@@ -32,8 +32,7 @@ function isVisible() {
     }
   });
 
-  L1_2.appendChild(hideBtn);
-  L1_2.appendChild(paragraph);
+  L1_2.append(hideBtn, paragraph);
 }
 
 // Opgave 3 - Ændrer baggrundsfarve på boks 3 ved button click.
@@ -56,8 +55,7 @@ function colorButton() {
     isColored = !isColored;
   });
 
-  L1_3.appendChild(changeColorBtn);
-  L1_3.appendChild(colorWarning);
+  L1_3.append(changeColorBtn, colorWarning);
 }
 
 // Opgave 4 - Tæller hvor mange gange knappen er clicked.
@@ -74,8 +72,7 @@ function colorButton() {
     clickCount.innerText = `Some redneck clicked the button ${count} times`;
   });
 
-  L1_4.appendChild(counterBtn);
-  L1_4.appendChild(clickCount);
+  L1_4.append(counterBtn, clickCount);
 }
 
 // Opgave 5 - Tæller antallet af bogstaver (og mellemrum) i ord/sætning.
@@ -93,8 +90,7 @@ function wordLenght(word) {
   Length without whitespace: ${trimWord.length}
   Length with whitespace: ${word.length}`;
 
-  L1_5.appendChild(insertedWord);
-  L1_5.appendChild(wordLenght);
+  L1_5.append(insertedWord, wordLenght);
 }
 
 // Opgave 6 - Fjern vokaler fra ord.
@@ -103,7 +99,7 @@ function removeLetters(word) {
   let paragraph = document.createElement('p');
   paragraph.innerText = `Cleaned word: ${lettersRemoved}`;
 
-  L1_6.appendChild(paragraph);
+  L1_6.append(paragraph);
 }
 
 // Function Calls
