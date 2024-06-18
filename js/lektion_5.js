@@ -46,5 +46,6 @@ L5_2.append(singleProduct);
 let newUserData = await myFetchFunction('https://dummyjson.com/users/add', options);
 
 let newUser = document.createElement('p');
-newUser.innerHTML = `New user added:<br>Username: ${newUserData.username}<br>Full name: ${newUserData.firstName} ${newUserData.lastName}<br> Age: ${newUserData.age}`;
+newUser.innerHTML = `New user added:<br>Username: ${newUserData.username}<br>
+Full name: ${newUserData.firstName} ${newUserData.lastName}<br> Age: ${newUserData.age}`;
 L5_3.append(newUser);
