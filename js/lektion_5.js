@@ -26,6 +26,8 @@ const options = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
+        username: 'dingo16',
+        password: 'iliketurtles',
         firstName: 'Christian',
         lastName: 'Dingo The 16th',
         age: 69420
@@ -44,5 +46,5 @@ L5_2.append(singleProduct);
 let newUserData = await myFetchFunction('https://dummyjson.com/users/add', options);
 
 let newUser = document.createElement('p');
-newUser.innerHTML = `New user added: <br>${newUserData.firstName} ${newUserData.lastName}<br> Age: ${newUserData.age}`;
+newUser.innerHTML = `New user added:<br>Username: ${newUserData.username}<br>Full name: ${newUserData.firstName} ${newUserData.lastName}<br> Age: ${newUserData.age}`;
 L5_3.append(newUser);
